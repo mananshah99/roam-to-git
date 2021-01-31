@@ -177,7 +177,7 @@ async def _download_rr_archive(document: Page,
                 await asyncio.sleep(1)
                 return
     logger.debug("Waiting too long {}")
-    raise FileNotFoundError("Impossible to download {} in {}", output_type, output_directory)
+    logger.debug("Impossible to download {} in {}", output_type, output_directory)
 
 
 async def signin(document, config: Config, sleep_duration=1.):
