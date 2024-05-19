@@ -182,8 +182,9 @@ def _download_rr_archive(browser: Browser,
 
     logger.debug("Wait for interface to load")
     dot_button = None
-    for _ in range(100):
+    for idx in range(2000):
         # Starting is a little bit slow, so we wait for the button that signal it's ok
+        print("Idx is ", idx)
         time.sleep(config.sleep_duration)
         try:
             dot_button = browser.find_element_by_css_selector(".bp3-icon-more", check=False)
